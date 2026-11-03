@@ -13,9 +13,9 @@ Juego de estrategia medieval en tiempo real hecho íntegramente en HTML5 (HTML +
 <p align="center">
   <a href="https://yottomtnz.github.io/feudo-a-feudo/juego/"><b>▶ JUGAR AHORA EN EL NAVEGADOR</b></a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/YottoMtnz/feudo-a-feudo/releases/download/v1.5-windows/FeudoAFeudo-Windows-v1.5.zip"><b>⬇ Windows</b></a>
+  <a href="https://github.com/YottoMtnz/feudo-a-feudo/releases/download/v1.5-windows/Feudo.a.Feudo.exe"><b>⬇ Windows</b></a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/YottoMtnz/feudo-a-feudo/releases/download/v1.5-android/FeudoAFeudo-v1.5.apk"><b>⬇ Android</b></a>
+  <a href="https://github.com/YottoMtnz/feudo-a-feudo/releases/download/v1.5-android/FeudoAFeudo.apk"><b>⬇ Android</b></a>
 </p>
 
 ## Capturas
