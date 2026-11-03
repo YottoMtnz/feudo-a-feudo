@@ -1,0 +1,47 @@
+# Equilibrado por simulación: victorias/partidas@mediana de segundos. "medio" = jugador simulado con ritmo humano; "experto" = jugador rápido.
+# Criterio: Escudero >= 80% (medio), Caballero >= 40% (medio), Señor de la Guerra >= 40% (experto).
+w1l1  Primeras Tierras       n= 5 r= 5 | Escudero(medio) 5/5@50  Caballero(medio) 5/5@111  Señor(experto) 5/5@68 | medallas 1:00 2:15 1:30  base
+w1l2  El Molino Viejo        n= 7 r= 8 | Escudero(medio) 5/5@160  Caballero(medio) 5/5@165  Señor(experto) 5/5@95 | medallas 3:15 3:15 2:00  base
+w1l3  Cruce de Caminos       n= 9 r=12 | Escudero(medio) 5/5@141  Caballero(medio) 5/5@157  Señor(experto) 5/5@99 | medallas 2:45 3:15 2:15  base
+w1l4  La Atalaya del Roble   n=11 r=14 | Escudero(medio) 5/5@199  Caballero(medio) 4/5@275  Señor(experto) 5/5@200 | medallas 4:00 5:30 4:15  base
+w1l5  Río Manso              n=13 r=16 | Escudero(medio) 5/5@199  Caballero(medio) 3/5@211  Señor(experto) 3/5@173 | medallas 4:00 4:15 3:45  slow=1.5,hate=0.5,p=1.4,e=0.8,g=0.85,dropExtra=true
+w1l6  Dos Señores            n=14 r=18 | Escudero(medio) 5/5@179  Caballero(medio) 5/5@183  Señor(experto) 5/5@157 | medallas 3:30 3:45 3:30  seedBump=17
+w1l7  Bosque Hondo           n=16 r=19 | Escudero(medio) 5/5@259  Caballero(medio) 5/5@308  Señor(experto) 5/5@315 | medallas 5:00 6:00 6:45  base
+w1l8  Puente de Piedra       n=17 r=24 | Escudero(medio) 5/5@199  Caballero(medio) 5/5@340  Señor(experto) 2/5@189 | medallas 4:00 6:45 4:00  seedBump=17,slow=1.3,hate=0.6,p=1.3
+w1l9  Corona del Valle       n=20 r=31 | Escudero(medio) 5/5@277  Caballero(medio) 2/5@312  Señor(experto) 3/5@243 | medallas 5:30 6:00 5:15  slow=1.5,hate=0.5,p=1.4,e=0.8,g=0.85,dropExtra=true
+w2l1  Bahía Tranquila        n=10 r=10 | Escudero(medio) 5/5@255  Caballero(medio) 2/5@296  Señor(experto) 5/5@189 | medallas 5:00 5:45 4:00  base
+w2l2  Muelles Viejos         n=13 r=16 | Escudero(medio) 5/5@252  Caballero(medio) 5/5@286  Señor(experto) 5/5@215 | medallas 5:00 5:30 4:30  seedBump=17,slow=1.3,hate=0.6,p=1.3
+w2l3  La Isla del Faro       n=14 r=14 | Escudero(medio) 5/5@256  Caballero(medio) 5/5@372  Señor(experto) 3/5@234 | medallas 5:00 7:15 5:00  slow=1.5,hate=0.5,p=1.4,e=0.8,g=0.85,dropExtra=true
+w2l4  Arrecife               n=15 r=16 | Escudero(medio) 4/5@250  Caballero(medio) 2/5@252  Señor(experto) 5/5@184 | medallas 5:00 5:00 4:00  slow=1.5,hate=0.5,p=1.4,e=0.8,g=0.85,dropExtra=true
+w2l5  Puentes Colgantes      n=15 r=17 | Escudero(medio) 4/5@536  Caballero(medio) 4/5@740  Señor(experto) 3/5@408 | medallas 10:30 14:15 8:30  seedBump=17,slow=1.3,hate=0.6,p=1.3
+w2l6  Mar de Bruma           n=18 r=23 | Escudero(medio) 5/5@293  Caballero(medio) 5/5@253  Señor(experto) 5/5@307 | medallas 5:45 5:00 6:30  seedBump=17
+w2l7  Atolón                 n=17 r=19 | Escudero(medio) 4/5@383  Caballero(medio) 5/5@391  Señor(experto) 5/5@586 | medallas 7:30 7:30 12:15  base
+w2l8  La Tormenta            n=20 r=22 | Escudero(medio) 4/5@425  Caballero(medio) 2/5@504  Señor(experto) 3/5@418 | medallas 8:15 9:45 8:45  seedBump=17
+w2l9  Reino de Sal           n=20 r=24 | Escudero(medio) 4/5@344  Caballero(medio) 3/5@354  Señor(experto) 2/5@283 | medallas 6:45 7:00 6:00  slow=1.5,hate=0.5,p=1.4,e=0.8,g=0.85,dropExtra=true
+w3l1  El Oasis               n=14 r=16 | Escudero(medio) 5/5@195  Caballero(medio) 5/5@253  Señor(experto) 5/5@172 | medallas 3:45 5:00 3:45  base
+w3l2  La Caravana            n=15 r=18 | Escudero(medio) 5/5@251  Caballero(medio) 5/5@276  Señor(experto) 5/5@174 | medallas 5:00 5:30 3:45  base
+w3l3  Cañón Seco             n=16 r=21 | Escudero(medio) 5/5@284  Caballero(medio) 3/5@320  Señor(experto) 4/5@329 | medallas 5:30 6:15 7:00  seedBump=73,slow=1.5,hate=0.5,p=1.5,pExtra=2,e=0.75,g=0.85,dropExtra=true
+w3l4  Espejismo              n=16 r=25 | Escudero(medio) 5/5@183  Caballero(medio) 5/5@215  Señor(experto) 4/5@116 | medallas 3:45 4:15 2:30  slow=1.5,hate=0.5,p=1.4,e=0.8,g=0.85,dropExtra=true
+w3l5  Fortaleza de Adobe     n=18 r=25 | Escudero(medio) 5/5@278  Caballero(medio) 4/5@339  Señor(experto) 5/5@212 | medallas 5:30 6:30 4:30  seedBump=41,slow=1.4,hate=0.6,p=1.4,e=0.85
+w3l6  Tormenta de Arena      n=19 r=24 | Escudero(medio) 5/5@436  Caballero(medio) 4/5@445  Señor(experto) 2/5@236 | medallas 8:30 8:45 5:00  slow=1.4,hate=0.6,p=1.3
+w3l7  El Gran Cañón          n=20 r=25 | Escudero(medio) 5/5@343  Caballero(medio) 5/5@340  Señor(experto) 4/5@672 | medallas 6:45 6:45 14:15  seedBump=17
+w3l8  Ruta de la Seda        n=21 r=29 | Escudero(medio) 5/5@311  Caballero(medio) 5/5@322  Señor(experto) 5/5@176 | medallas 6:00 6:15 3:45  base
+w3l9  Sultanato de Ámbar     n=24 r=34 | Escudero(medio) 5/5@366  Caballero(medio) 5/5@347  Señor(experto) 5/5@228 | medallas 7:15 6:45 5:00  base
+w4l1  Primera Nevada         n=16 r=19 | Escudero(medio) 5/5@282  Caballero(medio) 4/5@657  Señor(experto) 3/5@246 | medallas 5:30 12:45 5:15  seedBump=17
+w4l2  Lago Helado            n=17 r=23 | Escudero(medio) 5/5@221  Caballero(medio) 5/5@308  Señor(experto) 2/5@183 | medallas 4:15 6:00 4:00  slow=1.4,hate=0.6,p=1.3
+w4l3  Grieta Azul            n=18 r=21 | Escudero(medio) 5/5@249  Caballero(medio) 5/5@272  Señor(experto) 3/5@346 | medallas 5:00 5:15 7:15  base
+w4l4  Pinar Blanco           n=19 r=23 | Escudero(medio) 5/5@312  Caballero(medio) 3/5@338  Señor(experto) 5/5@212 | medallas 6:00 6:30 4:30  base
+w4l5  Paso del Lobo          n=20 r=26 | Escudero(medio) 5/5@313  Caballero(medio) 4/5@362  Señor(experto) 5/5@257 | medallas 6:00 7:00 5:30  base
+w4l6  Glaciar                n=20 r=32 | Escudero(medio) 5/5@216  Caballero(medio) 5/5@236  Señor(experto) 5/5@139 | medallas 4:15 4:45 3:00  seedBump=41,slow=1.4,hate=0.6,p=1.4,e=0.85
+w4l7  Ciudadela de Hielo     n=22 r=31 | Escudero(medio) 5/5@354  Caballero(medio) 3/5@384  Señor(experto) 5/5@203 | medallas 7:00 7:30 4:15  base
+w4l8  Ventisquero            n=24 r=34 | Escudero(medio) 5/5@239  Caballero(medio) 5/5@254  Señor(experto) 5/5@154 | medallas 4:45 5:00 3:15  seedBump=73,slow=1.5,hate=0.5,p=1.5,pExtra=2,e=0.75,g=0.85,dropExtra=true
+w4l9  Trono de Escarcha      n=26 r=38 | Escudero(medio) 5/5@329  Caballero(medio) 5/5@337  Señor(experto) 3/5@323 | medallas 6:30 6:30 6:45  seedBump=131
+w5l1  Tierra Quemada         n=18 r=24 | Escudero(medio) 4/5@272  Caballero(medio) 3/5@343  Señor(experto) 5/5@217 | medallas 5:15 6:45 4:45  base
+w5l2  Río de Fuego           n=19 r=22 | Escudero(medio) 4/5@311  Caballero(medio) 5/5@293  Señor(experto) 5/5@256 | medallas 6:00 5:45 5:30  base
+w5l3  Obsidiana              n=20 r=27 | Escudero(medio) 4/5@343  Caballero(medio) 3/5@358  Señor(experto) 5/5@276 | medallas 6:45 7:00 6:00  base
+w5l4  Fumarolas              n=21 r=24 | Escudero(medio) 5/5@310  Caballero(medio) 5/5@327  Señor(experto) 5/5@228 | medallas 6:00 6:30 4:45  base
+w5l5  Anillo de Ceniza       n=22 r=34 | Escudero(medio) 5/5@329  Caballero(medio) 4/5@413  Señor(experto) 2/5@296 | medallas 6:30 8:00 6:15  seedBump=17,slow=1.3,hate=0.6,p=1.3
+w5l6  Forja del Abismo       n=23 r=36 | Escudero(medio) 5/5@383  Caballero(medio) 5/5@479  Señor(experto) 4/5@270 | medallas 7:30 9:15 5:45  base
+w5l7  Puentes de Basalto     n=24 r=37 | Escudero(medio) 5/5@281  Caballero(medio) 5/5@307  Señor(experto) 5/5@181 | medallas 5:30 6:00 4:00  seedBump=17
+w5l8  Boca del Volcán        n=26 r=37 | Escudero(medio) 5/5@466  Caballero(medio) 4/5@791  Señor(experto) 3/5@231 | medallas 9:00 15:15 5:00  seedBump=41,slow=1.4,hate=0.6,p=1.4,e=0.85
+w5l9  El Último Feudo        n=28 r=40 | Escudero(medio) 5/5@320  Caballero(medio) 4/5@461  Señor(experto) 5/5@264 | medallas 6:15 9:00 5:45  slow=1.5,hate=0.5,p=1.4,e=0.8,g=0.85,dropExtra=true

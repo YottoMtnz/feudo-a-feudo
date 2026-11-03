@@ -1,0 +1,35 @@
+FEUDO A FEUDO — versión para Windows
+Idea original de Fraudy Martinez
+====================================
+
+CÓMO JUGAR
+  Abre «Feudo a Feudo.exe». No hace falta instalar nada: el juego, la música y el icono van dentro.
+  Requisitos: Windows 10 u 11 de 64 bits. Usa Microsoft Edge, que viene con Windows, como motor de la
+  ventana (si no está, usa Google Chrome; y si tampoco, abre el juego en el navegador predeterminado).
+
+LA PRIMERA VEZ
+  Windows puede mostrar «Windows protegió su PC» porque el ejecutable no lleva firma de empresa:
+  pulsa «Más información» y después «Ejecutar de todas formas».
+
+OPCIONES → PANTALLA
+  · Modo: pantalla completa, ventana o ventana maximizada.
+  · Pantalla completa: ocupa toda la pantalla sin ninguna barra ni botón (tampoco al llevar el ratón
+    arriba). Si cambias a otro programa (Alt+Tab, tecla Windows), el juego se minimiza y se pausa, y la
+    pantalla vuelve a la resolución del escritorio; al volver, recupera la del juego.
+  · Resolución y frecuencia (Hz) en pantalla completa: la pantalla vuelve a la del escritorio al salir.
+  · Tamaño de la ventana.
+  · Sincronización vertical (VSync) activada o desactivada.
+  Al pulsar «Aplicar», la ventana del juego se cierra y se vuelve a abrir con los cambios (la partida se conserva).
+  Alt+Enter cambia entre pantalla completa y ventana (desde la ventana, también F11). En plena batalla
+  el juego pregunta antes, porque al reabrirse la ventana esa batalla se pierde.
+
+OPCIONES → GRÁFICOS
+  Calidad, escala de render (50–150 %), límite de FPS (30/60/120/144/sin límite) y contador de FPS.
+
+SALIR
+  Botón «Salir» del menú principal o del menú de pausa; también cerrando la ventana o con Alt+F4.
+
+DÓNDE SE GUARDA
+  Partida y ajustes:   %APPDATA%\FeudoAFeudo        (partida.json, ajustes.json)
+  Motor de la ventana: %LOCALAPPDATA%\FeudoAFeudo\Motor
+  Para desinstalar, borra el .exe y esas dos carpetas.

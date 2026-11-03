@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#24160b">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="description" content="Feudo a Feudo: estrategia medieval en tiempo real. Conquista la tierra, edificio a edificio.">
+  <title>Feudo a Feudo</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 130'%3E%3Cpath d='M18 22 L102 22 L112 12 L112 60 C112 95 88 116 60 126 C32 116 8 95 8 60 L8 12 Z' fill='%23f4c95d' stroke='%234a2a06' stroke-width='5'/%3E%3Cpath d='M20 30 L60 30 L60 116 C40 106 20 90 20 60 Z' fill='%232f6fdc'/%3E%3Cpath d='M60 30 L100 30 L100 60 C100 90 80 106 60 116 Z' fill='%23d63a2b'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/icono-192.png">
+  <link rel="apple-touch-icon" href="img/icono-192.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <canvas id="cv"></canvas>
+  </div>
+  <div id="rotate">
+    <svg viewBox="0 0 24 24" width="64" height="64" fill="#f4c95d"><path d="M7 2h10a2 2 0 012 2v16a2 2 0 01-2 2H7a2 2 0 01-2-2V4a2 2 0 012-2zm0 3v14h10V5z"/></svg>
+    <div>Gira el dispositivo para jugar en horizontal</div>
+    <button class="btn small wood">Jugar igualmente</button>
+  </div>
+  <div class="loading" id="loading">Preparando el reino…</div>
+  <div id="fps" class="hidden"></div>
+  <noscript><div class="loading">Feudo a Feudo necesita JavaScript activado.</div></noscript>
+
+  <script src="js/core/util.js"></script>
+  <script src="js/core/data.js"></script>
+  <script src="js/core/map.js"></script>
+  <script src="js/core/game.js"></script>
+  <script src="js/core/ai.js"></script>
+  <script src="js/core/mapgen.js"></script>
+  <script src="js/core/levels.js"></script>
+  <script src="js/core/host.js"></script>
+  <script src="js/core/storage.js"></script>
+  <script src="js/render/art.js"></script>
+  <script src="js/render/terrain.js"></script>
+  <script src="js/render/life.js"></script>
+  <script src="js/render/renderer.js"></script>
+  <script src="js/audio/tracks.js"></script>
+  <script src="js/audio/audio.js"></script>
+  <script src="js/audio/sfx-data.js"></script>
+  <script src="js/audio/battle.js"></script>
+  <script src="js/ui/icons.js"></script>
+  <script src="js/ui/ui.js"></script>
+  <script src="js/ui/input.js"></script>
+  <script src="js/ui/tut.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

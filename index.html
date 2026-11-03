@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feudo a Feudo — Conquista la tierra, edificio a edificio</title>
+<meta name="description" content="Juego de estrategia medieval en tiempo real hecho en HTML5. 45 niveles, 5 mundos. Juega en el navegador o descarga para Windows y Android.">
+<link rel="icon" href="juego/img/icono-192.png">
+<style>
+  :root{
+    --bg:#070914; --bg2:#0c0f22; --card:#10132a; --line:#232850;
+    --teal:#2dd4bf; --teal2:#5eead4; --gold:#f4c95d; --txt:#e8eaf6; --mut:#9aa3c7;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--txt);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.55}
+  a{color:var(--teal2);text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;z-index:10;background:rgba(7,9,20,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;gap:12px;padding:12px 0}
+  .nav img{width:38px;height:38px;border-radius:9px}
+  .nav .t{font-weight:800;font-size:1.15rem;letter-spacing:.3px}
+  .nav .sp{flex:1}
+  .lang button{background:var(--card);color:var(--mut);border:1px solid var(--line);padding:6px 13px;border-radius:20px;cursor:pointer;font-weight:700;font-size:.85rem}
+  .lang button.on{background:var(--teal);color:#04241f;border-color:var(--teal)}
+  .hero{text-align:center;padding:56px 0 30px;background:radial-gradient(ellipse 70% 55% at 50% 0%,#173a4a 0%,var(--bg) 70%)}
+  .hero h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:900;background:linear-gradient(180deg,#ffe9a8,var(--gold) 55%,#c8892a);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 2px 0 transparent}
+  .hero .tag{color:var(--teal2);font-size:clamp(1rem,2.4vw,1.3rem);font-weight:600;margin-top:6px}
+  .hero .sub{color:var(--mut);max-width:640px;margin:14px auto 0}
+  .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:28px 0 8px}
+  .btn{display:inline-block;padding:14px 26px;border-radius:12px;font-weight:800;font-size:1.02rem;border:1px solid var(--line);background:var(--card);color:var(--txt);transition:.15s}
+  .btn:hover{transform:translateY(-2px);border-color:var(--teal)}
+  .btn.play{background:linear-gradient(180deg,var(--teal2),var(--teal));color:#032723;border-color:transparent;font-size:1.12rem;padding:16px 34px}
+  .btn small{display:block;font-weight:600;font-size:.74rem;opacity:.75}
+  .shot{margin:30px auto 0;max-width:920px}
+  .shot img{width:100%;border-radius:16px;border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.55)}
+  section{padding:44px 0 6px}
+  h2{font-size:1.55rem;margin-bottom:8px}
+  h2 .bar{color:var(--teal)}
+  .lead{color:var(--mut);max-width:720px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .card .ic{font-size:1.5rem}
+  .card h3{margin:6px 0 4px;font-size:1.02rem}
+  .card p{color:var(--mut);font-size:.92rem}
+  .worlds{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:20px}
+  .world{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .world img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+  .world div{padding:12px 16px}
+  .world h3{font-size:1rem}
+  .world p{color:var(--mut);font-size:.88rem}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:20px}
+  .dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:20px}
+  .dl .card{text-align:center;padding:26px 20px}
+  .dl .btn{margin-top:14px}
+  footer{margin-top:56px;border-top:1px solid var(--line);padding:26px 0 40px;color:var(--mut);font-size:.9rem;text-align:center}
+  .credits{color:var(--mut);font-size:.93rem;max-width:760px}
+  .credits li{margin:5px 0 5px 18px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <img src="juego/img/icono-192.png" alt="Feudo a Feudo">
+    <div class="t">Feudo a Feudo</div>
+    <div class="sp"></div>
+    <div class="lang">
+      <button id="bES" class="on" onclick="setLang('es')">ES</button>
+      <button id="bEN" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Feudo a Feudo</h1>
+    <div class="tag" data-es="Conquista la tierra, edificio a edificio." data-en="Conquer the land, building by building.">Conquista la tierra, edificio a edificio.</div>
+    <p class="sub" data-es="Estrategia medieval en tiempo real hecha íntegramente en HTML5, sin librerías: 45 niveles en 5 mundos, hechizos, medallas y señores rivales con su propia personalidad. Sin conexión y sin instalar nada." data-en="Medieval real-time strategy built entirely in HTML5, no libraries: 45 levels across 5 worlds, spells, medals and rival lords with their own personalities. Offline and nothing to install.">Estrategia medieval en tiempo real hecha íntegramente en HTML5, sin librerías: 45 niveles en 5 mundos, hechizos, medallas y señores rivales con su propia personalidad. Sin conexión y sin instalar nada.</p>
+    <div class="cta">
+      <a class="btn play" href="juego/"><span data-es="▶ Jugar en el navegador" data-en="▶ Play in your browser">▶ Jugar en el navegador</span></a>
+      <a class="btn" href="https://github.com/YottoMtnz/feudo-a-feudo/releases/download/v1.5-windows/FeudoAFeudo-Windows-v1.5.zip">⬇ Windows<small data-es="Un solo .exe · no instala nada" data-en="Single .exe · nothing to install">Un solo .exe · no instala nada</small></a>
+      <a class="btn" href="https://github.com/YottoMtnz/feudo-a-feudo/releases/download/v1.5-android/FeudoAFeudo-v1.5.apk">⬇ Android<small data-es="APK · Android 5.0+ · sin permisos" data-en="APK · Android 5.0+ · no permissions">APK · Android 5.0+ · sin permisos</small></a>
+    </div>
+    <div class="shot"><img src="capturas/menu.png" alt="Feudo a Feudo — pantalla principal / main screen"></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2><span class="bar">▸</span> <span data-es="El juego" data-en="The game">El juego</span></h2>
+    <p class="lead" data-es="Cada edificio con dueño entrena soldados sin parar. Envía la mitad de la guarnición por los caminos, conquista aldeas, castillos, atalayas, establos y herrerías, y deja a tus rivales sin un solo edificio. Pero cuidado: un edificio enemigo en medio del camino bloquea el paso, y dos ejércitos que se cruzan luchan cuerpo a cuerpo." data-en="Every owned building trains soldiers non-stop. Send half the garrison along the roads, conquer villages, castles, watchtowers, stables and forges, and leave your rivals without a single building. But beware: an enemy building in the middle of a road blocks the way, and two armies that meet will fight hand to hand.">Cada edificio con dueño entrena soldados sin parar. Envía la mitad de la guarnición por los caminos, conquista aldeas, castillos, atalayas, establos y herrerías, y deja a tus rivales sin un solo edificio. Pero cuidado: un edificio enemigo en medio del camino bloquea el paso, y dos ejércitos que se cruzan luchan cuerpo a cuerpo.</p>
+    <div class="grid">
+      <div class="card"><div class="ic">🗺️</div><h3 data-es="45 niveles, 5 mundos" data-en="45 levels, 5 worlds">45 niveles, 5 mundos</h3><p data-es="Del valle verde a la caldera de lava, con medalla de tiempo en cada nivel y modo." data-en="From the green valley to the lava caldera, with a time medal in every level and mode.">Del valle verde a la caldera de lava, con medalla de tiempo en cada nivel y modo.</p></div>
+      <div class="card"><div class="ic">✨</div><h3 data-es="5 reliquias mágicas" data-en="5 magic relics">5 reliquias mágicas</h3><p data-es="Rayo, Égida, Sopor, Ventisca y Meteoro, con maná que se recarga." data-en="Lightning, Aegis, Slumber, Blizzard and Meteor, with recharging mana.">Rayo, Égida, Sopor, Ventisca y Meteoro, con maná que se recarga.</p></div>
+      <div class="card"><div class="ic">⚔️</div><h3 data-es="3 dificultades" data-en="3 difficulties">3 dificultades</h3><p data-es="Escudero, Caballero y Señor de la Guerra: la IA se despierta contigo." data-en="Squire, Knight and Warlord: the AI wakes up as you do.">Escudero, Caballero y Señor de la Guerra: la IA se despierta contigo.</p></div>
+      <div class="card"><div class="ic">🏆</div><h3 data-es="Logros y batalla rápida" data-en="Achievements & quick battle">Logros y batalla rápida</h3><p data-es="27 logros, estadísticas y mapas generados al azar para escaramuzas." data-en="27 achievements, stats and randomly generated maps for skirmishes.">27 logros, estadísticas y mapas generados al azar para escaramuzas.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><span class="bar">▸</span> <span data-es="Los cinco mundos" data-en="The five worlds">Los cinco mundos</span></h2>
+    <div class="worlds">
+      <div class="world"><img src="capturas/valle.png" alt="Valle de Robledal"><div><h3 data-es="🌳 Valle de Robledal" data-en="🌳 Oak Valley">🌳 Valle de Robledal</h3><p data-es="Patos en los lagos, mariposas y el Duque Bermejo en tu puerta." data-en="Ducks on the lakes, butterflies and the Crimson Duke at your door.">Patos en los lagos, mariposas y el Duque Bermejo en tu puerta.</p></div></div>
+      <div class="world"><img src="capturas/islas.png" alt="Archipiélago de Sal"><div><h3 data-es="🏝️ Archipiélago de Sal" data-en="🏝️ Salt Archipelago">🏝️ Archipiélago de Sal</h3><p data-es="Islas unidas por puentes colgantes sobre un mar lleno de peces." data-en="Islands joined by hanging bridges over a sea full of fish.">Islas unidas por puentes colgantes sobre un mar lleno de peces.</p></div></div>
+      <div class="world"><img src="capturas/desierto.png" alt="Dunas de Ámbar"><div><h3 data-es="🏜️ Dunas de Ámbar" data-en="🏜️ Amber Dunes">🏜️ Dunas de Ámbar</h3><p data-es="Remolinos de arena, buitres en círculo y fortalezas de adobe." data-en="Sand devils, circling vultures and adobe fortresses.">Remolinos de arena, buitres en círculo y fortalezas de adobe.</p></div></div>
+      <div class="world"><img src="capturas/hielo.png" alt="Cumbres de Escarcha"><div><h3 data-es="❄️ Cumbres de Escarcha" data-en="❄️ Frost Peaks">❄️ Cumbres de Escarcha</h3><p data-es="Ríos helados, pinos nevados y pasos que se defienden solos." data-en="Frozen rivers, snowy pines and passes that defend themselves.">Ríos helados, pinos nevados y pasos que se defienden solos.</p></div></div>
+      <div class="world"><img src="capturas/volcan.png" alt="Caldera de Brasas"><div><h3 data-es="🌋 Caldera de Brasas" data-en="🌋 Ember Caldera">🌋 Caldera de Brasas</h3><p data-es="Lava que fluye, ceniza en el aire y los tres grandes señores unidos contra ti." data-en="Flowing lava, ash in the air and the three great lords united against you.">Lava que fluye, ceniza en el aire y los tres grandes señores unidos contra ti.</p></div></div>
+      <div class="world"><img src="capturas/victoria.png" alt="Victoria"><div><h3 data-es="⭐ La victoria" data-en="⭐ Victory">⭐ La victoria</h3><p data-es="Medallas de tiempo, puntuación y logros al cerrar cada conquista." data-en="Time medals, score and achievements at the end of every conquest.">Medallas de tiempo, puntuación y logros al cerrar cada conquista.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><span class="bar">▸</span> <span data-es="Cómo se juega" data-en="How to play">Cómo se juega</span></h2>
+    <div class="steps">
+      <div class="card"><div class="ic">1️⃣</div><h3 data-es="Toca tu edificio" data-en="Tap your building">Toca tu edificio</h3><p data-es="Clic o toque para seleccionarlo; varios a la vez si quieres atacar en oleada." data-en="Click or tap to select it; several at once for a wave attack.">Clic o toque para seleccionarlo; varios a la vez si quieres atacar en oleada.</p></div>
+      <div class="card"><div class="ic">2️⃣</div><h3 data-es="Toca el objetivo" data-en="Tap the target">Toca el objetivo</h3><p data-es="Sale la mitad de la guarnición por el camino. Doble toque para reforzar uno tuyo." data-en="Half the garrison marches out. Double-tap to reinforce your own.">Sale la mitad de la guarnición por el camino. Doble toque para reforzar uno tuyo.</p></div>
+      <div class="card"><div class="ic">3️⃣</div><h3 data-es="Mejora y hechiza" data-en="Upgrade & cast">Mejora y hechiza</h3><p data-es="La flecha dorada sube el nivel (más capacidad y producción) y las reliquias cambian batallas." data-en="The golden arrow upgrades (more capacity and output) and relics turn battles around.">La flecha dorada sube el nivel (más capacidad y producción) y las reliquias cambian batallas.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><span class="bar">▸</span> <span data-es="Descargas" data-en="Downloads">Descargas</span></h2>
+    <div class="dl">
+      <div class="card"><div class="ic">🌐</div><h3 data-es="Web" data-en="Web">Web</h3><p data-es="Juega aquí mismo, sin descargar nada. También en un solo archivo HTML." data-en="Play right here, nothing to download. Also as a single HTML file.">Juega aquí mismo, sin descargar nada. También en un solo archivo HTML.</p><a class="btn play" href="juego/"><span data-es="▶ Jugar" data-en="▶ Play">▶ Jugar</span></a></div>
+      <div class="card"><div class="ic">🪟</div><h3>Windows</h3><p data-es="Un solo ejecutable con todo dentro (78 MB). Windows 10/11, sin instalación. La primera vez puede salir «Windows protegió su PC»: Más información → Ejecutar de todas formas." data-en="A single executable with everything inside (78 MB). Windows 10/11, no installation. First run may show “Windows protected your PC”: More info → Run anyway.">Un solo ejecutable con todo dentro (78 MB). Windows 10/11, sin instalación. La primera vez puede salir «Windows protegió su PC»: Más información → Ejecutar de todas formas.</p><a class="btn" href="https://github.com/YottoMtnz/feudo-a-feudo/releases/download/v1.5-windows/FeudoAFeudo-Windows-v1.5.zip">⬇ <span data-es="Descargar .zip" data-en="Download .zip">Descargar .zip</span></a></div>
+      <div class="card"><div class="ic">🤖</div><h3>Android</h3><p data-es="APK para Android 5.0 o posterior, en horizontal y a pantalla completa. No pide ningún permiso. Permite «instalar apps desconocidas» al abrirlo." data-en="APK for Android 5.0+, landscape and full screen. It asks for no permissions. Allow “install unknown apps” when opening it.">APK para Android 5.0 o posterior, en horizontal y a pantalla completa. No pide ningún permiso. Permite «instalar apps desconocidas» al abrirlo.</p><a class="btn" href="https://github.com/YottoMtnz/feudo-a-feudo/releases/download/v1.5-android/FeudoAFeudo-v1.5.apk">⬇ <span data-es="Descargar .apk" data-en="Download .apk">Descargar .apk</span></a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><span class="bar">▸</span> <span data-es="Créditos" data-en="Credits">Créditos</span></h2>
+    <ul class="credits">
+      <li><b data-es="Idea original, código y gráficos:" data-en="Original idea, code and art:">Idea original, código y gráficos:</b> Fraudy Martinez.</li>
+      <li><b data-es="Música (13 pistas libres):" data-en="Music (13 free tracks):">Música (13 pistas libres):</b> RandomMind (CC0) · Alexander Nakarada (CC BY 4.0) · glitchart (CC BY 3.0) · Bobjt / tridentkeep (CC BY 3.0).</li>
+      <li><b data-es="Sonidos de batalla:" data-en="Battle sounds:">Sonidos de batalla:</b> Mixkit · StarNinjas (CC0) · Universfield (Pixabay).</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span data-es="⚔️ Feudo a Feudo v1.5 — un juego de Fraudy Martinez Madruga ·" data-en="⚔️ Feudo a Feudo v1.5 — a game by Fraudy Martinez Madruga ·">⚔️ Feudo a Feudo v1.5 — un juego de Fraudy Martinez Madruga ·</span>
+    <a href="https://github.com/YottoMtnz/feudo-a-feudo">GitHub</a>
+  </div>
+</footer>
+
+<script>
+  function setLang(l){
+    document.querySelectorAll('[data-es]').forEach(function(el){
+      el.textContent = el.getAttribute('data-' + l);
+    });
+    document.getElementById('bES').classList.toggle('on', l === 'es');
+    document.getElementById('bEN').classList.toggle('on', l === 'en');
+    document.documentElement.lang = l;
+    try{ localStorage.setItem('feudo-lang', l); }catch(e){}
+  }
+  (function(){
+    var l = 'es';
+    try{ l = localStorage.getItem('feudo-lang') || ((navigator.language || 'es').indexOf('en') === 0 ? 'en' : 'es'); }catch(e){}
+    if(l === 'en') setLang('en');
+  })();
+</script>
+</body>
+</html>

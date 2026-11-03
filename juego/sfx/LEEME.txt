@@ -1,0 +1,35 @@
+FEUDO A FEUDO — SONIDOS DE BATALLA
+==================================
+
+Sonidos grabados que suenan en las batallas. Van dentro del juego (js/audio/sfx-data.js), así que
+funcionan igual en el navegador, en el archivo único, en Windows y en Android. El resto de efectos
+(clics, conquistas, mejoras, hechizos…) se generan por código.
+
+CUÁNDO SUENAN
+  grito-1..3        grito de guerra cuando salen tus tropas
+  grito-grupo       todo un ejército gritando (ataques grandes o desde 3 edificios a la vez)
+  choque-*, tajo-*  espadas cuando dos ejércitos chocan en un camino
+  golpe-*           tropas golpeando un edificio (tuyo o atacado por ti)
+  esfuerzo-1        gritos durante la lucha (más cuanto más dura la pelea)
+  muerte-1          soldado que cae
+  tambores          al empezar cada batalla
+  cuerno            antes de la batalla final de cada mundo y en la batalla rápida
+
+ORIGEN Y LICENCIAS
+  Mixkit (licencia gratuita de Mixkit, sin atribución; no se pueden redistribuir sueltos):
+    grito-1  Battle man scream            grito-2  Fighting man's voice     grito-3  Fighting man voice
+    esfuerzo-1  Effort man voice          muerte-1  Human fighter pain scream
+    choque-m1  Fast sword hit in medieval battle   choque-m2  Sword blade attack in medieval battle
+    choque-m3  Sword slashes in battle    golpe-1  Sword strikes armor       golpe-2  Sword pierces armor
+    golpe-3  Hitting metal armor          tambores  Drums of war call        cuerno  War horn ambience
+  StarNinjas, «20 Sword Sound Effects (Attacks and Clashes)», OpenGameArt (CC0):
+    choque-01..10  sword_clash 1..10      tajo-01..10  sword 1..10
+  Universfield, «Epic War Combat Scream», Pixabay (licencia de contenido de Pixabay):
+    grito-grupo
+
+  Elegidos y descargados por Fraudy Martinez. Recortados, en mono, normalizados y en MP3 (96 kbps).
+
+CAMBIAR O AÑADIR UN SONIDO
+  python3 tools/build-sfx.py --preparar ARCHIVO.wav NOMBRE     (lo deja listo como sfx/NOMBRE.mp3)
+  python3 tools/build-sfx.py                                   (vuelve a generar js/audio/sfx-data.js)
+  El nombre decide para qué se usa (ver la lista de arriba). Necesita ffmpeg.

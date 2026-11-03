@@ -1,0 +1,46 @@
+FEUDO A FEUDO — MÚSICA
+======================
+
+13 pistas MP3 de repositorios libres, elegidas y descargadas por Fraudy Martinez.
+El juego iguala su volumen (todas a −19 LUFS con la música al 100 %) y, en los mundos con dos
+pistas, cada nivel empieza por una distinta y al acabar una suena la otra.
+
+HUECO               ARCHIVO                                   PISTA / AUTOR / LICENCIA
+menú                01-menu-exploration.mp3                   Medieval: Exploration — RandomMind — CC0
+mapa                02-mapa-harvest-season.mp3                Medieval: Harvest Season — RandomMind — CC0
+valle               03-valle-old-tower-inn.mp3                Medieval: The Old Tower Inn — RandomMind — CC0
+valle               04-valle-kings-feast.mp3                  Medieval: King's Feast — RandomMind — CC0
+islas (y hielo)     05-islas-celtic-whispers.mp3              Celtic Whispers — Alexander Nakarada — CC BY 4.0
+islas               06-islas-minstrel-dance.mp3               Medieval: Minstrel Dance — RandomMind — CC0
+desierto            07-desierto-night-in-the-desert.mp3       Night in the Desert (remix Tausdei vs Hitctrl) — glitchart — CC BY 3.0
+hielo               08-hielo-traversing-the-white-peaks.mp3   Traversing the White Peaks — Alexander Nakarada — CC BY 4.0
+volcán              09-volcan-humans-march.mp3                War: Humans March — Bobjt / tridentkeep — CC BY 3.0
+volcán              10-volcan-battle.mp3                      Medieval: Battle — RandomMind — CC0
+batalla final (9)   11-final-rise-of-kingdoms.mp3             Rise of Kingdoms — Alexander Nakarada — CC BY 4.0
+victoria            12-victoria-victory-theme.mp3             Medieval: Victory Theme — RandomMind — CC0
+derrota             13-derrota-defeat-theme.mp3               Medieval: Defeat Theme — RandomMind — CC0
+
+Enlaces:
+  https://opengameart.org/content/medieval-exploration
+  https://opengameart.org/content/medieval-harvest-season
+  https://opengameart.org/content/medieval-the-old-tower-inn
+  https://opengameart.org/content/medieval-kings-feast
+  https://www.free-stock-music.com/alexander-nakarada-celtic-whispers.html
+  https://opengameart.org/node/92393
+  https://opengameart.org/content/night-in-the-desert-remixed-tausdei-vs-hitctrl
+  https://www.free-stock-music.com/alexander-nakarada-traversing-the-white-peaks.html
+  https://opengameart.org/node/179428
+  https://opengameart.org/node/113876
+  https://www.free-stock-music.com/alexander-nakarada-rise-of-kingdoms.html
+  https://opengameart.org/content/medieval-victory-theme
+  https://opengameart.org/content/medieval-defeat-theme
+
+Las licencias CC BY exigen citar al autor: el juego lo hace en la pantalla de Créditos.
+«Night in the Desert» sólo estaba en OGG/FLAC: va convertida a MP3 (192 kbps).
+«Exploration» venía más baja que el resto (−22 LUFS): va subida 2,6 dB, sin limitador.
+
+CAMBIAR UNA PISTA
+  1. Pon el MP3 nuevo aquí con el mismo nombre que el que sustituye.
+  2. Iguala su volumen con:  python3 tools/music-gains.py   (necesita ffmpeg)
+  3. Si cambian el título o el autor, edítalos en js/audio/tracks.js (salen en Créditos).
+Si falta un archivo, ese hueco usa la música generada por el propio juego.
